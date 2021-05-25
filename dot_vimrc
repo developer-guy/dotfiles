@@ -51,6 +51,8 @@ call plug#begin(expand('~/./plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'wojciechkepka/vim-github-dark'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'joshdick/onedark.vim'
 Plug 'stephpy/vim-yaml'
@@ -262,9 +264,7 @@ set number
 let no_buffers_menu=1
 
 """" enable the theme
-silent! colorscheme onedark
-set background=dark " for the dark version
-" set background=light " for the light version
+silent! colorscheme dracula
 
 set mousemodel=popup
 set t_Co=256
@@ -329,7 +329,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'onedark'
+let g:airline_theme = 'dracula'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1

@@ -41,7 +41,6 @@ source <(tmuxinator completions zsh)
 source <(faas-cli completion --shell zsh)
 # Zsh (add to .zshrc for persistence)
 source <(kompose completion zsh)
-source <(argo completion zsh)
 source <(kn completion zsh)
 eval "$(direnv hook zsh)"
 export KUBE_EDITOR="code -w"
@@ -293,3 +292,5 @@ alias jo="opa eval -I --import 'input as i'"
 # alias jo=”opa eval -I --import ‘input as i’” --package p
 alias jp="jo --format=pretty"
 alias jr="jo --format=raw"
+
+[ -f ~/.fzf-gcloud.plugin.zsh ] && source ~/.fzf-gcloud.plugin.zsh
