@@ -44,6 +44,7 @@ function! ResizeSplits()
     wincmd =
 endfunction
 
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " Required:
 call plug#begin(expand('~/./plugged'))
@@ -51,8 +52,6 @@ call plug#begin(expand('~/./plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'wojciechkepka/vim-github-dark'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'joshdick/onedark.vim'
 Plug 'stephpy/vim-yaml'
@@ -264,8 +263,6 @@ set number
 let no_buffers_menu=1
 
 """" enable the theme
-silent! colorscheme dracula
-
 set mousemodel=popup
 set t_Co=256
 set guioptions=egmrti
@@ -329,7 +326,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'dracula'
+"let g:airline_theme = 'dracula'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1

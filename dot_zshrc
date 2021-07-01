@@ -12,6 +12,12 @@ else
 	compinit -C;
 fi;
 
+
+# Configuration for virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+source /usr/local/bin/virtualenvwrapper.sh
 POC_HOME="/Users/batuhan.apaydin/workspace/projects/personal/poc"
 TRENDYOL_HOME="/Users/batuhan.apaydin/workspace/projects/trendyol"
 fpath+=~/.zfunc
@@ -31,6 +37,7 @@ alias rss=newsboat --refresh-on-start --quiet
 alias dotfile-manager="chezmoi"
 #If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+echo 'export PATH="/usr/local/opt/binutils/bin:$PATH"' >> ~/.zshrc
 source ~/zsh-interactive-cd.plugin.zsh
 source <(operator-sdk completion zsh)
 source <(kind completion zsh)
@@ -39,6 +46,7 @@ source <(skaffold completion zsh)
 source <(helm completion zsh)
 source <(tmuxinator completions zsh)
 source <(faas-cli completion --shell zsh)
+eval "$(zoxide init zsh)"
 # Zsh (add to .zshrc for persistence)
 source <(kompose completion zsh)
 source <(kn completion zsh)
@@ -120,7 +128,7 @@ export ZSH="/Users/batuhan.apaydin/.oh-my-zsh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(you-should-use fzf-tab colored-man-pages hostctl git-extra-commands terraform command-time zsh-completions docker-compose docker-machine vagrant aws zsh-syntax-highlighting zsh-autosuggestions git autojump docker git-extras minikube)
+plugins=(bw you-should-use fzf-tab colored-man-pages hostctl git-extra-commands terraform command-time zsh-completions docker-compose docker-machine vagrant aws zsh-syntax-highlighting zsh-autosuggestions git autojump docker git-extras minikube)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
@@ -294,3 +302,9 @@ alias jp="jo --format=pretty"
 alias jr="jo --format=raw"
 
 [ -f ~/.fzf-gcloud.plugin.zsh ] && source ~/.fzf-gcloud.plugin.zsh
+
+
+
+
+
+export PATH="/usr/local/opt/binutils/bin:$PATH"
