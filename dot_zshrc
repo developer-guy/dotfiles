@@ -52,7 +52,7 @@ source <(kompose completion zsh)
 source <(kn completion zsh)
 eval "$(direnv hook zsh)"
 export KUBE_EDITOR="code -w"
-export KUBECTL_EXTERNAL_DIFF="meld"
+export KUBECTL_EXTERNAL_DIFF="colordiff -N -u"
 export KUBECTX_CURRENT_FGCOLOR=$(tput setaf 6) # blue text
 export KUBECTX_CURRENT_BGCOLOR=$(tput setaf 7) # white background
 # Aliases
@@ -302,9 +302,10 @@ alias jp="jo --format=pretty"
 alias jr="jo --format=raw"
 
 [ -f ~/.fzf-gcloud.plugin.zsh ] && source ~/.fzf-gcloud.plugin.zsh
+source ~/az.completion
 
-
-
-
-
+alias gmo="go list -u -m -json all | go-mod-outdated"
+alias gmod="go list -u -m -json all | go-mod-outdated -direct"
+alias gmou="go list -u -m -json all | go-mod-outdated -update"
+alias gmodu="go list -u -m -json all | go-mod-outdated -direct -update"
 export PATH="/usr/local/opt/binutils/bin:$PATH"
